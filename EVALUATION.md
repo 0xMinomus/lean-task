@@ -65,8 +65,11 @@ Usage cannot be compared fairly if the model, task, tools, or context differ.
 
 ## Scope of compatibility evidence
 
-The local Skills CLI 1.7.0 discovered exactly one skill, `lean-task`, from the
-repository layout. This checks packaging/discovery, not behavior in every client.
+Skills CLI 1.7.0 discovered exactly one skill, `lean-task`, from both the local
+repository and the published GitHub repository. After a native global copy on
+Windows, `omp read skill://lean-task` resolved the user-global
+`.omp/agent/skills/lean-task/SKILL.md`. This checks packaging and installation,
+not behavior in every client; other clients have not been behavior-tested here.
 The installed skill has only a Markdown instruction file; there are no hooks,
 executables, or runtime dependencies to run on a user's machine.
 
