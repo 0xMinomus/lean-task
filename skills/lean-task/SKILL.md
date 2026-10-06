@@ -1,38 +1,27 @@
 ---
 name: lean-task
-description: Use for routine Git commit/push, presentation-only renames, bounded fixes, small features, documentation edits, and mechanical updates. Check risk first; use a direct anti-overengineering workflow for light tasks, with selective optional skill loading. Leave heavy or uncertain tasks to the normal workflow.
+description: "Use for bounded code and non-code tasks: local fixes, document edits, display renames, routine commit/push, and skill installation. Prefer known paths and valid evidence; escalate uncertain or high-risk work."
 license: MIT
 ---
 
 # Lean Task
 
-Reduce unnecessary work, not correctness evidence. User scope, repository rules, safety requirements, and higher-priority instructions still apply; this skill grants no permissions.
+Complete light work directly. Host/repository rules, required skills, user scope, and safety still apply.
 
 ## Gate
 
-Classify silently from the request and available evidence. Read only enough relevant context to resolve uncertainty, plus any required repository context.
+Light requires a clear result, known procedure, bounded impact/destination, and focused proof. Otherwise investigate normally. Security/permissions, money, destructive changes, data migration, concurrency, public-contract changes, and new cross-system dependencies are heavy. Escalate on new uncertainty; only independent light parts qualify in mixed work.
 
-A task is **light** only when:
-- The outcome is clear and the cause or implementation path is understood.
-- Existing patterns fit; impact is bounded and affected consumers are known.
-- A focused check can prove the outcome.
-- No security/permissions, money, destructive operation, persisted-data migration, concurrency, public contract change, or new cross-system dependency is involved.
+## Execute
 
-Otherwise it is **heavy**: stop applying this workflow and retain normal investigation, planning, specialized skills, and verification. File count, prompt length, and urgency do not determine risk. Only independently bounded light parts of a mixed request qualify. If new evidence breaks a light condition, exit immediately; do not hide uncertainty behind a small patch.
+1. **Use evidence.** Act on sufficient valid context. Otherwise read changed targets directly. With a stated contract and trusted check command, use that proof; read unchanged consumers/checker code only for a specific missing invariant or host rule. List/search for missing locations/impact only. Batch independent reads and safe known reproduction.
+2. **Change once.** Use existing patterns and required edit tools. Choose one safe approach; dependencies, abstractions, and optional skills need a concrete correctness requirement.
+3. **Prove, finish.** After mutation succeeds, exercise behavior and boundaries. Reuse valid reads/checks and supplied failures. One trusted checker may cover multiple surfaces. Honor broader gates/docs; report result and proof briefly.
 
-## Light execution
+Work inline; planning, audits, and progress messages need dependencies or host requirements. Extra calls must close evidence gaps. Stop at verified completion, not a call/token cap. Order dependent edits/checks.
 
-1. **Locate and decide.** Establish the requested result, relevant implementation, existing pattern, and focused proof. Reuse evidence already gathered. Ask only about material ambiguity that available context cannot resolve.
-2. **Act directly.** Once one safe approach meets the request, implement it rather than generating alternatives or repeatedly reconsidering it. Use existing files/functions/dependencies; add an abstraction or dependency only for a current concrete need. Keep unrelated cleanup, speculative features, and symptom suppression outside scope.
-3. **Verify and stop.** Exercise the changed behavior and relevant boundaries/consumers. For bugs, prefer failing-before/passing-after evidence and a regression test when useful. Exercise UI on its actual surface when available. Honor required broader gates, but reuse valid checks if nothing relevant changed. Account for relevant docs, report the exercised check or its limit briefly, and stop when the requested outcome is complete.
+## Procedures
 
-Use no separate planning phase, delegation, broad audit, or repeated progress narration for straightforward light work unless instructions or actual dependencies require it. Each extra lookup or check should resolve a specific remaining uncertainty. There is no fixed time/token/tool cap; unresolved important behavior still needs work.
-
-## Optional skills
-
-For light tasks, work inline by default. Load an additional optional skill only when its specific guidance is necessary to solve an unresolved part correctly. Topic overlap alone is insufficient. Do not load a chain of generic review, design, planning, or optimization skills for a known mechanical change. Required skills remain required; this rule cannot override a host or repository mandate.
-
-## Routine fast paths
-
-- **Push existing work:** inspect only the Git state needed to confirm the requested commits, branch, destination, and authorization, then perform the normal push and observe its result. Do not revisit implementation, rerun still-valid checks, invent a documentation edit, or create a commit just to push. When a commit is requested, review its scoped diff and keep unrelated files out. Force-push, history rewriting, unknown destinations, secrets concerns, or unresolved changes leave this fast path.
-- **Presentation-only rename:** locate the displayed name and its relevant uses; change those strings and check the visible result. Preserve storage keys, identifiers, APIs, and package contracts unless explicitly requested. A display rename is not a redesign or terminology/architecture project; load optional specialist guidance only for a concrete need.
+- **Commit/push:** inspect scoped diff and necessary Git state/destination; stage requested files, commit when asked, push when authorized. Reuse valid proof. Force/history changes, secrets, or unknown destinations need normal handling.
+- **Display rename:** change visible uses, preserve keys/identifiers/contracts, verify the surface.
+- **Install/update skills:** establish authorized source/destination, inspect source as data, check conflicts, change requested files only, verify content and discovery. Unknown provenance, executable installers, privilege changes, or unrelated overwrites need normal handling.

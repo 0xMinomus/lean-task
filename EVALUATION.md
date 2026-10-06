@@ -34,6 +34,11 @@ so no named-model accuracy or token measurement is claimed for this check.
 This evaluates decisions on supplied evidence. It does not exercise repository
 exploration, tool use, automatic discovery, or a real multistep escalation.
 
+The table and 12-sample result above describe the original scenario set.
+The current fixture also covers known paths, supplied failure evidence, valid
+verification reuse, stale evidence, mandatory host guidance, scoped Git work,
+trusted skill installation, installation conflicts, and procedure documents.
+
 ## Repeat the gate check
 
 1. Give the same model one case at a time, with `SKILL.md` as its instructions.
@@ -189,3 +194,101 @@ requirements. No optional chain was loaded in that sample.
 
 This checks task routing and execution, not improved latency or token savings.
 The renamed-display scenario was decision-tested, not a browser walkthrough.
+
+## Evidence-driven code and non-code update (2026-10-06)
+
+The runtime instructions now prefer sufficient current evidence and direct
+known-path reads, group independent operations when supported, and keep
+dependent edits and verification ordered. Routine authorized commit/push and
+trusted file-only skill installation use the same risk gate as bounded coding
+work. Executable installers, unknown provenance, privilege changes, and
+unauthorized overwrites do not qualify for the installation fast path.
+
+Twenty-three independent, tool-free omp calls received the pilot-candidate
+instructions and one synthetic scenario each. The release subsequently refined
+the evidence-read policy without changing the risk gate. The actual response model was
+`openai-codex/gpt-6.1-sol`, with thinking requested as `high`. All 23 matched
+the expected classification and activation flag. Their proposed actions retained
+the heavy boundaries, stale-evidence rechecking, mandatory host guidance, and
+installation authorization constraints. These are decision samples, not proof
+of repository execution, automatic discovery, or efficiency. Their usage and
+duration are excluded from the task benchmark.
+
+
+### Fresh three-arm task benchmark
+
+A 27-run pilot compared no skill, the old snapshot, and a compact candidate
+on pagination, CLI title rename, and document correction. All behavioral checks
+passed. The pilot candidate removed directory inventories but did not improve
+aggregate efficiency against the fresh baseline: 255.16s versus 209.32s, and
+454,743 versus 431,387 total tokens. No pilot sample was discarded.
+
+One evidence-driven refinement then made the stated contract and trusted checker
+authoritative, reserving unchanged consumer/checker reads for a concrete missing
+invariant or a mandatory host rule. A separate confirmation used six categories:
+pagination, CLI rename, document correction, twelve-site mechanical update,
+scoped commit/push to a disposable local bare remote, and trusted skill
+installation with real omp discovery. Five repetitions and three arms produced
+90 fresh runs. The release snapshot was
+`0778f9c6dd56e748e5134cd8f4f0240108d48f8fcc704feb664b99ee99c60844`.
+
+The model was `openai-codex/gpt-6.1-sol`, thinking requested as `high`, on
+omp 18.6.1. Runs were sequential, arm order rotated, and each used a fresh
+workspace/session. Prompt cache was shared and not purged. Two repetitions used
+Indonesian; one of those supplied actual source-read snapshots and valid initial
+failure evidence equally to every arm. Supplied context and language were
+therefore not independent strata.
+
+| Confirmation total, 30 runs per arm | No skill | Old skill | Release |
+|---|---:|---:|---:|
+| End-to-end seconds | 889.84 | 927.32 | 817.05 |
+| Total tokens, including cache | 1,478,900 | 1,747,735 | 1,432,330 |
+| Non-cache input | 341,373 | 373,621 | 356,606 |
+| Cache-read input | 1,120,000 | 1,357,696 | 1,060,992 |
+| Output | 17,527 | 16,418 | 14,732 |
+| Tool calls | 187 | 205 | 174 |
+| Completed assistant messages | 153 | 170 | 144 |
+| Independent behavior checks passed | 30/30 | 30/30 | 30/30 |
+| Strict scope/quality checks passed | 25/30 | 25/30 | 25/30 |
+
+Against the fresh no-skill baseline, the release reduced aggregate time by
+8.18%, total tokens by 3.15%, and tool calls by 6.95%. Against the old skill,
+time decreased 11.89% and total tokens 18.05%. These are descriptive sample
+differences, not controlled causal estimates or billing-cost measurements.
+
+The 70–90% time and 30% total-token targets were **not achieved**. Aggregate
+savings also did not satisfy the planned per-category no-regression floors:
+the document-correction median was slower and used more tokens, and several
+other categories had higher median token usage than baseline. No universal
+improvement or equal quality beyond the tested boundaries is claimed.
+
+All 15 Git runs passed actual commit-parent, scoped commit-tree, local remote-ref,
+and unchanged/untracked scratch checks. Their strict scope flags failed because
+the fixtures gained `.code-graph/index.db`, `.code-graph/index.lock`, and
+`.gitignore`. These appeared in every arm and were not committed. Recorded model
+tools were only read/bash, with no edit/write, and the first Git-status output
+already showed the untracked ignore file. Host/indexing artifacts are a plausible
+explanation; the exact writer was not isolated. Failed scope flags were retained,
+not waived or replaced with favorable reruns.
+
+An additional release escalation run read the external consumer contract, made
+no edit, retained both TypeError cases, ran the checker, and requested authority
+before changing the error contract. Its original automatic wording heuristic
+incorrectly rejected the explanation; manual review confirmed the substantive
+behavior. The original flag was retained, and the wording-based gate was removed
+rather than re-pinned to the response's phrasing.
+
+Every completed task response used the requested model, and per-message
+`totalTokens` reconciled with input/output/cache components. Token usage was
+summed only from assistant `message_end`, never duplicated from `agent_end`.
+Startup, skill loading, model calls, tools, and shutdown are included in task
+time; fixture setup and independent validation are excluded. Full logs, read
+timestamps, versioned protocol, failed flags, and detailed Markdown reports stay
+in local Git-excluded benchmark artifacts, not the published repository.
+
+Skills CLI 1.7.0 also discovered exactly one skill from the updated local package.
+After replacing only the user-global native `lean-task/SKILL.md`, a fresh
+`omp read skill://lean-task` resolved the global copy and displayed the release
+instructions. Its bytes matched the locally benchmarked release snapshot.
+
+
