@@ -1,0 +1,62 @@
+[
+  {
+    "id": "typo",
+    "expected": "light",
+    "task": "Correct a misspelling in a known README paragraph. No links, commands, or code behavior change; inspect the rendered sentence."
+  },
+  {
+    "id": "pagination",
+    "expected": "light",
+    "task": "Fix paginate(items, page, pageSize): its end index is start + pageSize - 1. This private helper returns Array.slice(start, end). Consumers and existing boundary tests are known; no API or input contract change."
+  },
+  {
+    "id": "ui-label",
+    "expected": "light",
+    "task": "Change an existing dialog Cancel label to Batal. The component and local translation convention are known, no new behavior. Verify the dialog with keyboard and check no clipped text."
+  },
+  {
+    "id": "mechanical",
+    "expected": "light",
+    "task": "Replace a deprecated internal constant at 12 known uses with the equivalent existing constant; same value and meaning, all consumers mapped, focused checks available."
+  },
+  {
+    "id": "feature",
+    "expected": "light",
+    "task": "Add an optional clear button to an existing search input, following a neighboring component. All consumers are local, reset behavior is specified, browser checks cover focus and results."
+  },
+  {
+    "id": "permission",
+    "expected": "heavy",
+    "task": "Remove a single role check from an authorization handler to let more users access an endpoint."
+  },
+  {
+    "id": "migration",
+    "expected": "heavy",
+    "task": "Rename one saved JSON field and migrate all persisted user records without losing progress."
+  },
+  {
+    "id": "intermittent",
+    "expected": "heavy",
+    "task": "The UI freezes sometimes after a reconnect. Cause unknown; fix it quickly."
+  },
+  {
+    "id": "contract",
+    "expected": "heavy",
+    "task": "Change an exported library method to return null instead of throwing. Only one line needs changing; downstream consumers unknown."
+  },
+  {
+    "id": "money",
+    "expected": "heavy",
+    "task": "Fix a one-character rounding error in payment settlement; this changes charged totals."
+  },
+  {
+    "id": "mixed",
+    "expected": "heavy",
+    "task": "Correct a README typo and also replace the authentication token validation system. Treat the request as a whole."
+  },
+  {
+    "id": "escalation",
+    "expected": "heavy",
+    "task": "Initially a null guard looked local. New evidence: callers rely on an exported function throwing and the proposed guard silently changes its public contract. Reassess before editing."
+  }
+]
