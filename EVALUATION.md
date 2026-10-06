@@ -159,3 +159,33 @@ Inspect completed `agent_end` messages for tool calls, provider-reported usage,
 and actual tool results. Confirm discovery via a read of `skill://lean-task`,
 not just an assistant assertion. Keep credentials and personal paths out of
 published transcripts. Repeat across models and tasks before making a savings claim.
+
+## Local fast-path refinement (2026-10-06)
+
+User testing reported excessive deliberation on push requests and unnecessary
+specialist loading on a presentation-only game rename. The installed skill was
+updated to choose one safe approach, load optional skills only for a concrete
+correctness need, reuse unchanged verification, and provide routine push and
+display-rename fast paths. Historical measurements above describe the initial
+instructions, not this refinement.
+
+Seven new stateless model samples matched the expected behavior:
+- Known authorized push and unchanged documentation push: light, no additional
+  optional skill, no repeat of unchanged checks or new commit.
+- Display-only rename: light, no additional optional skill, focused render check,
+  preserve save keys and internal/public identifiers.
+- Force-push with unknown remote state: heavy.
+- Rename with persisted save-key migration: heavy.
+- Known local correction with a host-mandated specialist: light, but load the
+  required guidance.
+- Permission change with unknown policy: heavy.
+
+A real omp smoke used the globally installed skill with normal discovery and a
+disposable local Git remote. The model read the skill, checked Git state and the
+configured destination, and performed a normal push. Git reported `main -> main`.
+No new commit, implementation edit, or repeated test was performed. One additional
+host-mandated skill was still read; the refinement cannot cancel higher-priority
+requirements. No optional chain was loaded in that sample.
+
+This checks task routing and execution, not improved latency or token savings.
+The renamed-display scenario was decision-tested, not a browser walkthrough.

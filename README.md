@@ -133,6 +133,20 @@ The skill imposes no hard token, tool, file, or time cap. It does not switch you
 model, change permissions, run a scheduler, or automatically commit/push files.
 Heavy tasks keep their normal planning, specialized skills, and verification.
 
+For known light work, the agent should choose one safe approach and act rather
+than explore alternatives or load optional skills merely because the topic overlaps.
+Additional optional guidance needs a concrete unresolved correctness requirement.
+Host/repository-mandated skills cannot be skipped by this skill.
+
+Routine push requests reuse valid verification and check only the Git state
+needed for the authorized destination. They do not trigger implementation review,
+fresh edits, or another commit. Force pushes and uncertain destinations are not
+on this fast path. Presentation-only renames update displayed strings and leave
+storage keys, identifiers, and API/package contracts intact.
+
+The skill discourages unnecessary deliberation; it cannot directly set a model's
+reasoning level or guarantee response time.
+
 ## Compatibility and limitations
 
 - Uses the portable [Agent Skills format](https://agentskills.io/specification):

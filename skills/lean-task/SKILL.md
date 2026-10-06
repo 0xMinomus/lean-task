@@ -1,36 +1,38 @@
 ---
 name: lean-task
-description: Use for bounded code fixes, small features, local UI changes, documentation edits, or mechanical updates. Classify by risk and scope first; apply a lean anti-overengineering workflow only to light tasks. For heavy or uncertain tasks, leave the normal workflow unchanged.
+description: Use for routine Git commit/push, presentation-only renames, bounded fixes, small features, documentation edits, and mechanical updates. Check risk first; use a direct anti-overengineering workflow for light tasks, with selective optional skill loading. Leave heavy or uncertain tasks to the normal workflow.
 license: MIT
 ---
 
 # Lean Task
 
-Reduce unnecessary work, not the evidence needed for correctness. Follow the user's scope, repository instructions, and applicable safety requirements; this skill grants no new permissions.
+Reduce unnecessary work, not correctness evidence. User scope, repository rules, safety requirements, and higher-priority instructions still apply; this skill grants no permissions.
 
-## Gate: light or heavy
+## Gate
 
-Use the request and already available context. Inspect only the relevant implementation, conventions, and consumers needed to resolve uncertainty; required repository reads still apply. Do not audit the whole project just to classify a task.
+Classify silently from the request and available evidence. Read only enough relevant context to resolve uncertainty, plus any required repository context.
 
-A task is **light** only when all are supported by evidence:
-- The requested outcome and acceptance criteria are clear.
-- The cause or implementation path is understood; an existing pattern fits.
-- The impact is bounded and affected consumers can be identified.
-- A focused check can demonstrate the changed behavior.
-- There is no high-risk boundary: security or permissions, money, destructive operations, persisted-data migration, concurrency, a public contract change, or a new cross-system dependency.
+A task is **light** only when:
+- The outcome is clear and the cause or implementation path is understood.
+- Existing patterns fit; impact is bounded and affected consumers are known.
+- A focused check can prove the outcome.
+- No security/permissions, money, destructive operation, persisted-data migration, concurrency, public contract change, or new cross-system dependency is involved.
 
-Otherwise it is **heavy**. File count, prompt length, and urgency are not classifiers. A known local bug can be light; a one-line permission change is heavy. A mechanical update across several files can be light when every affected use is known and meaning stays unchanged.
+Otherwise it is **heavy**: stop applying this workflow and retain normal investigation, planning, specialized skills, and verification. File count, prompt length, and urgency do not determine risk. Only independently bounded light parts of a mixed request qualify. If new evidence breaks a light condition, exit immediately; do not hide uncertainty behind a small patch.
 
-For heavy tasks, stop applying this skill and use the normal task-appropriate workflow. Keep required planning, investigation, specialized skills, and verification intact. For mixed requests, do not label the whole request light because one part is easy; only independently bounded light parts qualify.
+## Light execution
 
-Classify silently unless the user asks. Do not ask them to choose a difficulty or add an activation announcement. If later evidence breaks any light condition, leave the lean workflow immediately, retain useful work, and investigate normally. Do not patch around uncertainty to stay light.
+1. **Locate and decide.** Establish the requested result, relevant implementation, existing pattern, and focused proof. Reuse evidence already gathered. Ask only about material ambiguity that available context cannot resolve.
+2. **Act directly.** Once one safe approach meets the request, implement it rather than generating alternatives or repeatedly reconsidering it. Use existing files/functions/dependencies; add an abstraction or dependency only for a current concrete need. Keep unrelated cleanup, speculative features, and symptom suppression outside scope.
+3. **Verify and stop.** Exercise the changed behavior and relevant boundaries/consumers. For bugs, prefer failing-before/passing-after evidence and a regression test when useful. Exercise UI on its actual surface when available. Honor required broader gates, but reuse valid checks if nothing relevant changed. Account for relevant docs, report the exercised check or its limit briefly, and stop when the requested outcome is complete.
 
-## Light workflow
+Use no separate planning phase, delegation, broad audit, or repeated progress narration for straightforward light work unless instructions or actual dependencies require it. Each extra lookup or check should resolve a specific remaining uncertainty. There is no fixed time/token/tool cap; unresolved important behavior still needs work.
 
-1. **Bound the result.** Identify the requested behavior and what proves it. Ask only about a material ambiguity that the request or repository cannot resolve.
-2. **Read enough.** Locate the relevant code and existing pattern. Trace affected consumers before changing shared behavior. Prefer targeted reads and reuse evidence already gathered; repeat a check only when new information warrants it.
-3. **Make the direct change.** Prefer existing functions, files, and dependencies. Add an abstraction only for a current requirement or demonstrated duplication; use a dependency only for a concrete capability the existing stack cannot reasonably provide. Keep unrelated refactors, speculative options, and extra features outside scope. A symptom-suppressing patch is not a simpler fix.
-4. **Verify proportionately.** Run the focused test or scenario covering the changed behavior, relevant boundaries, and affected consumers. For a bug, use a failing-before/passing-after check when practical; add a regression test when it protects a plausible recurring failure. Exercise UI changes on the actual surface when available. Run broader gates when required by the repository or actual impact, not as a substitute for a focused check. Report any verification limit.
-5. **Stop at completion.** The requested outcome works, affected consumers and relevant docs are accounted for, and verification evidence exists. Report the change and exercised check briefly. An unresolved failure or untested important behavior is not completion.
+## Optional skills
 
-Use a short plan only when sequencing helps or instructions require one. Do straightforward bounded work inline; delegate only genuinely independent substantial work. Batch independent lookups when useful. Keep tool calls purposeful and explanations proportional to the request. Do not impose a fixed token, tool, file, or time cap that could cut off correct work.
+For light tasks, work inline by default. Load an additional optional skill only when its specific guidance is necessary to solve an unresolved part correctly. Topic overlap alone is insufficient. Do not load a chain of generic review, design, planning, or optimization skills for a known mechanical change. Required skills remain required; this rule cannot override a host or repository mandate.
+
+## Routine fast paths
+
+- **Push existing work:** inspect only the Git state needed to confirm the requested commits, branch, destination, and authorization, then perform the normal push and observe its result. Do not revisit implementation, rerun still-valid checks, invent a documentation edit, or create a commit just to push. When a commit is requested, review its scoped diff and keep unrelated files out. Force-push, history rewriting, unknown destinations, secrets concerns, or unresolved changes leave this fast path.
+- **Presentation-only rename:** locate the displayed name and its relevant uses; change those strings and check the visible result. Preserve storage keys, identifiers, APIs, and package contracts unless explicitly requested. A display rename is not a redesign or terminology/architecture project; load optional specialist guidance only for a concrete need.
