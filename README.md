@@ -81,8 +81,8 @@ discovery, not that every future prompt will activate the lean workflow.
 
 ## Use
 
-No difficulty selector, slash command, or special prompt is required. Write your
-normal request in your preferred language, for example:
+No difficulty selector, slash command, or special prompt is required. State the
+requested outcome and its boundary in your preferred language, for example:
 
 ```text
 Fix the README typo without changing application code.
