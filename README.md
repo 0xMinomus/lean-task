@@ -27,11 +27,13 @@ npx skills add 0xMinomus/lean-task --skill lean-task -g -a claude-code -y
 npx skills add 0xMinomus/lean-task --skill lean-task -g -a codex -y
 ```
 
-List the repository's skills without installing:
+List the repository's skills without installing or changing any agent:
 
 ```sh
 npx skills add 0xMinomus/lean-task --list
 ```
+
+This command only reports discoverable skills.
 
 Restart your coding agent after installation. Installer support does not prove
 that a particular model will discover or follow the skill automatically.
