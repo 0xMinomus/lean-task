@@ -13,7 +13,8 @@ universal speed, token, or quality guarantee.
 
 ### Coding agents supported by the Skills CLI
 
-Requires Node.js/npm and access to this public GitHub repository.
+Requires Node.js/npm and access to this public GitHub repository. The installer
+does not alter the repository itself.
 
 ```sh
 npx skills add 0xMinomus/lean-task --skill lean-task -g
