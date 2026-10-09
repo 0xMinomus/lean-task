@@ -42,7 +42,8 @@ that a particular model will discover or follow the skill automatically.
 ### Oh My Pi (omp): global native installation
 
 Requires Git and an installed `omp`. This uses omp's native user skills directory,
-not the separate `omp skill install` registry command.
+not the separate `omp skill install` registry command. It changes only the
+named `lean-task` skill directory.
 
 Clone into a local directory you control:
 
