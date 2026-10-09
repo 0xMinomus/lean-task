@@ -7,7 +7,8 @@ work directly. Heavy or uncertain tasks keep the normal workflow.
 The goal is fewer unnecessary reads, tool calls, abstractions, and explanations.
 Targets of 70–90% less task time and 30% fewer total tokens are evaluation goals,
 not achieved savings. Results depend on the model, host, and task; there is no
-universal speed, token, or quality guarantee.
+universal speed, token, or quality guarantee. Small tasks may not repay skill
+discovery overhead.
 
 ## Install
 
