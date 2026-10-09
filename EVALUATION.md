@@ -61,6 +61,8 @@ Capture:
 - Exit from the lean workflow when new evidence reveals a heavy boundary.
 - Tool calls, input/output tokens, cached tokens, and wall-clock duration when
   the client reports them. Include skill-loading overhead; separate cold/warm runs.
+- Keep raw benchmark artifacts local and ignored; publish only the reviewed
+  summary needed by repository readers.
 
 A faster run fails if it skips required evidence or changes behavior outside the
 request. A heavy task must retain its normal investigation and quality gates.
