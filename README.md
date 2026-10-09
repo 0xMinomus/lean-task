@@ -93,6 +93,7 @@ Install this reviewed local skill into my user skills directory; keep other skil
 Update the named procedure document using the supplied approved steps.
 Migrate persisted saves to the new schema without losing user progress.
 ```
+Keep the requested scope explicit when asking for a routine non-code operation.
 
 The bounded fixes, Git operation, skill installation, and document update can
 qualify as light when their procedure, scope, authorization, and proof are known.
