@@ -70,7 +70,7 @@ These are the default-profile paths. If you relocate omp's agent directory or
 use a named profile, install under that active directory's `skills/lean-task/`
 instead. Review any existing same-named skill before replacing it.
 
-Open a new omp session. Verify discovery:
+Start a new omp session after copying the file. Verify discovery:
 
 ```sh
 omp read skill://lean-task
