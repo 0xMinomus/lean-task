@@ -34,10 +34,8 @@ so no named-model accuracy or token measurement is claimed for this check.
 This evaluates decisions on supplied evidence. It does not exercise repository
 exploration, tool use, automatic discovery, or a real multistep escalation.
 
-The table and 12-sample result above describe the original scenario set.
-The current fixture also covers known paths, supplied failure evidence, valid
-verification reuse, stale evidence, mandatory host guidance, scoped Git work,
-trusted skill installation, installation conflicts, and procedure documents.
+The original 12-scenario table remains historical. The expanded fixture contains
+23 scenarios, including code, document, Git, installation, and escalation cases.
 
 ## Repeat the gate check
 
