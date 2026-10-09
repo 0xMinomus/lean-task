@@ -53,6 +53,8 @@ Use equivalent clean fixtures, the same model, tools, repository rules, and
 acceptance checks. Run once without this skill and once with it available through
 normal discovery; do not name the skill in the task prompt. Repeat across task
 categories and vary run order to avoid interpreting a single sample as a trend.
+Run equivalent fixtures in at least three arms when comparing a new skill:
+without the skill, with the previous skill, and with the candidate release.
 
 Capture:
 - Correctness against the same acceptance and boundary checks.
